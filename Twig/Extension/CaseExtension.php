@@ -33,12 +33,12 @@ class CaseExtension extends \Twig_Extension
      */
     public function getFilters()
     {
-        return array(
-            'camel'      => new \Twig_SimpleFilter($this, 'toCamelCase'),
-            'pascal'     => new \Twig_SimpleFilter($this, 'toPascalCase'),
-            'underscore' => new \Twig_SimpleFilter($this, 'toUnderscoreCase'),
-            'title'      => new \Twig_SimpleFilter($this, 'toTitleCase')
-        );
+        return [
+            new \Twig_SimpleFilter('camel',     [$this, 'toCamelCase']),
+            new \Twig_SimpleFilter('pascal',    [$this, 'toPascalCase']),
+            new \Twig_SimpleFilter('underscore',[$this, 'toUnderscoreCase']),
+            new \Twig_SimpleFilter('title',     [$this, 'toTitleCase']),
+        ];
     }
 
     /**
